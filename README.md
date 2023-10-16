@@ -9,6 +9,7 @@
 
 ## Instructions
 
+- You need to create your own public repo from this boilerplate.(Do not create fork)
 - Run the app and check the components. The base design is already implemented.
 - Write test cases for the base design, the test statements are already written
 - Make all the components responsive (follow the test-case statements).
@@ -16,6 +17,11 @@
   - The game container component (GameBox) has a max width and max height 360px x 640px (9/16 ratio), if the viewport width is less than 360px or greater than 640px, the container should update according (if the viewport is 320px x 800px then GameBox should be 320px x 569px, or for 800px x 600px, GameBox should be 337.5px x 600px)
 - Fonts should be responsive too, all the config values are provided assuming the GameBox is 360px x 640px, so when it's smaller, the fonts, border-radius etc should updated respectively.
 - Updating all the test cases to make sure the responsiveness is working is highly appreciated.
+
+## Deliverable
+
+- Game screen with responsive component design.
+- All the necessary test cases implementation.
 
 ## How to run
 
