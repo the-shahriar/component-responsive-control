@@ -1,5 +1,3 @@
-# Flarie SWE Frontend test
-
 ## Prerequisites:
 
 - React
