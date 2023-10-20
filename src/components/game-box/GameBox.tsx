@@ -2,13 +2,15 @@ import React, { ReactNode, useEffect, useState } from 'react';
 import { ContainerStyled } from './styled';
 import { TestElement } from '../../enums/TestElement';
 
-interface Props {
-  children: ReactNode;
-}
-
 interface ViewportData {
   width: number;
   height: number;
+  fontSize: number;
+}
+
+interface Props {
+  children: ReactNode;
+  viewPort: ViewportData;
 }
 
 const calculateWidth = (viewPort: ViewportData) => {
@@ -45,25 +47,7 @@ const calculateHeight = (viewPort: ViewportData) => {
   return height;
 };
 
-export const GameBox = ({ children }: Props) => {
-  const [viewPort, setViewPort] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
-
-  const handleResize = () => {
-    setViewPort((prev) => ({ ...prev, height: window.innerHeight, width: window.innerWidth }));
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
+export const GameBox = ({ viewPort, children }: Props) => {
   return (
     <ContainerStyled
       data-testid={TestElement.GAME_BOX}

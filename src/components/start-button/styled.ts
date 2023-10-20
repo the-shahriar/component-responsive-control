@@ -2,7 +2,7 @@ import styled, { CSSObject } from 'styled-components';
 import { gameConfig } from '../../config/game-config';
 
 export const ButtonStyled = styled.button(
-  (): CSSObject => ({
+  (props: { fontSize: number }): CSSObject => ({
     backgroundColor: '#34d399',
     color: '#022c22',
     position: 'absolute',
@@ -17,7 +17,7 @@ export const ButtonStyled = styled.button(
     borderRadius: gameConfig.startButton.borderRadius,
     height: gameConfig.startButton.height,
     width: gameConfig.startButton.width,
-    fontSize: gameConfig.startButton.fontSize,
+    fontSize: props.fontSize || gameConfig.startButton.fontSize,
 
     ':hover': {
       boxShadow: '0 2px 8px rgba(0,0,0,0.2)',

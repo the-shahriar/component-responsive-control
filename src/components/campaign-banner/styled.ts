@@ -2,7 +2,7 @@ import styled, { CSSObject } from 'styled-components';
 import { gameConfig } from '../../config/game-config';
 
 export const BannerStyled = styled.div(
-  (): CSSObject => ({
+  (props: { fontSize: number }): CSSObject => ({
     display: 'flex',
     position: 'absolute',
     flexDirection: 'column',
@@ -13,5 +13,6 @@ export const BannerStyled = styled.div(
     padding: gameConfig.campaignBanner.padding,
     backgroundColor: gameConfig.campaignBanner.background,
     color: gameConfig.campaignBanner.textColor,
+    fontSize: props.fontSize,
   }),
 );
