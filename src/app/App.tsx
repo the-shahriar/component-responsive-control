@@ -19,7 +19,7 @@ export const App = () => {
   const [viewPort, setViewPort] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
-    fontSize: 16,
+    fontSize: 17,
   });
 
   const handleResize = () => {
@@ -27,7 +27,7 @@ export const App = () => {
       ...prev,
       height: window.innerHeight,
       width: window.innerWidth,
-      fontSize: calculateFontSize(window.innerWidth, 17),
+      fontSize: calculateFontSize(window.innerWidth, viewPort.fontSize),
     }));
   };
 

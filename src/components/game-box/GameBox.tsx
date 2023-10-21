@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { ReactNode } from 'react';
 import { ContainerStyled } from './styled';
 import { TestElement } from '../../enums/TestElement';
 
@@ -13,8 +13,8 @@ interface Props {
   viewPort: ViewportData;
 }
 
-const calculateWidth = (viewPort: ViewportData) => {
-  const minWidth = 320;
+export const calculateWidth = (viewPort: ViewportData) => {
+  const minWidth = 0;
   const maxWidth = 640;
 
   let width: number;
@@ -24,7 +24,7 @@ const calculateWidth = (viewPort: ViewportData) => {
     width = Math.max(Math.min(viewPort.width, maxWidth), minWidth);
   } else if (viewPort.width >= 640) {
     aspectRatio = 9 / 16;
-    width = Math.ceil(viewPort.height * aspectRatio);
+    width = viewPort.height * aspectRatio;
   } else {
     width = viewPort.width;
   }
@@ -32,7 +32,7 @@ const calculateWidth = (viewPort: ViewportData) => {
   return width;
 };
 
-const calculateHeight = (viewPort: ViewportData) => {
+export const calculateHeight = (viewPort: ViewportData) => {
   const width = calculateWidth(viewPort);
   let aspectRatio: number;
   let height: number;
